@@ -27,7 +27,7 @@ class OracleOfBacon
     true
   end
 
-  def initialize(api_key='', to='Kevin Bacon', from='Kevin Bacon')
+  def initialize(api_key='38b99ce9ec87', to='Kevin Bacon', from='Kevin Bacon')
     @api_key = api_key
     @to = to
     @from = from
@@ -50,6 +50,7 @@ class OracleOfBacon
   def make_uri_from_arguments
     # your code here: set the @uri attribute to properly-escaped URI
     #   constructed from the @from, @to, @api_key arguments
+    @uri = "http://oracleofbacon.org/p=#{@api_key}&a="+CGI.escape(@from)+"&b="+CGI.escape(@to)
   end
       
   class Response
